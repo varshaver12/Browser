@@ -17,30 +17,72 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-RZ-TWf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="83" width="414" height="779"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CeU-6z-rRp">
+                                <rect key="frame" x="5" y="44" width="404" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-mh-QA8">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="yJa-nI-3oz"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back">
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="10"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backReturn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkV-cd-nWC"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tki-yJ-uK5">
+                                        <rect key="frame" x="75" y="0.0" width="254" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEO-Ve-vyL">
+                                        <rect key="frame" x="334" y="0.0" width="70" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Return">
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="10"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="returnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jfq-3e-YeR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sfO-mh-QA8" firstAttribute="width" secondItem="YEO-Ve-vyL" secondAttribute="width" id="WtV-ev-B1u"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CeU-6z-rRp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="AZ8-XG-2CX"/>
+                            <constraint firstItem="CeU-6z-rRp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JRK-S5-hoR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mlf-RZ-TWf" secondAttribute="trailing" id="Xem-x1-aRC"/>
-                            <constraint firstItem="Mlf-RZ-TWf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oLq-jd-2kO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CeU-6z-rRp" secondAttribute="trailing" constant="5" id="auX-qS-hef"/>
+                            <constraint firstItem="Mlf-RZ-TWf" firstAttribute="top" secondItem="CeU-6z-rRp" secondAttribute="bottom" constant="5" id="kEL-hh-VNU"/>
                             <constraint firstItem="Mlf-RZ-TWf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sXO-GB-GOg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mlf-RZ-TWf" secondAttribute="bottom" id="tet-eK-uDA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="sfO-mh-QA8" id="PRb-nf-a9H"/>
+                        <outlet property="returnButton" destination="YEO-Ve-vyL" id="Ks6-x3-TUe"/>
+                        <outlet property="urlTextField" destination="Tki-yJ-uK5" id="4pg-Ur-A3I"/>
                         <outlet property="webView" destination="Mlf-RZ-TWf" id="8B4-m4-Dlw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="84"/>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>

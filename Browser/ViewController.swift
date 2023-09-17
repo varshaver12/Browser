@@ -10,16 +10,27 @@ import WebKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var returnButton: UIButton!
+    @IBOutlet var urlTextField: UITextField!
     @IBOutlet var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://apple.com")
+        let homePage = "https://apple.com"
+        let url = URL(string: homePage)
         let request = URLRequest(url: url!)
+        
+        urlTextField.text = homePage
+        
         webView.load(request)
         webView.allowsBackForwardNavigationGestures = true
     }
 
-
+    @IBAction func returnPressed(_ sender: UIButton) {
+    }
+    @IBAction func backReturn(_ sender: UIButton) {
+    }
+    
 }
 
